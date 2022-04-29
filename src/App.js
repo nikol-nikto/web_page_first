@@ -6,7 +6,7 @@ import { useState } from 'react';
 function App() {
   useState();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className='App'>
