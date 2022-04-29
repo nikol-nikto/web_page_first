@@ -1,0 +1,24 @@
+.headPost {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 170%;
+    width: 100%;
+    margin: 1%;
+    text-align: left;
+}
+.body {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    background-color: #5a5d5f;
+}
+.allPosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 3% 0 3%;
+}

@@ -1,0 +1,30 @@
+.navExit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    width: 100%;
+    color: aliceblue;
+    font-weight: 400;
+    padding: 5px 10px;
+    background-color: inherit;
+    fill: white;
+}
+
+.navExit img {
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+
+/* .navExit svg {
+    height: 20px;
+    margin: 0 10px 0 0;
+    fill: white;
+} */
+
+.sidebarBottom {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    cursor: pointer;
+}

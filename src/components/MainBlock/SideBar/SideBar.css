@@ -1,0 +1,16 @@
+.sidebar {
+    width: 15%;
+    /* width: 200px; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #32383d;
+    color: white;
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: flex-start;
+}
+

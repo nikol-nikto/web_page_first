@@ -1,0 +1,38 @@
+.LoginForm {
+    position: relative;
+    top: 15%;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #5a5d5f;
+    height: 200px;
+    border-radius: 15px;
+}
+h1 {
+    padding-top: 10px;
+}
+.loginPageBody {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #32383d;
+}
+
+.LoginForm div {
+    margin-bottom: 10px;
+}
+
+.LoginForm input, .LoginForm button {
+    border-radius: 8px;
+    width: 80%;
+    padding: 3px 5px;
+}
+
+.LoginForm input {
+    border: 1px solid #ccc;
+}
+
+.LoginForm button {
+    background-color: #333;
+    color: white;
+}
