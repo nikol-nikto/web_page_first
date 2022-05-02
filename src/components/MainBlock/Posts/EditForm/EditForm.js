@@ -4,7 +4,6 @@ import "./EditForm.css"
 import React, { useState } from 'react'
 import { ReactComponent as Cancel } from '../postsAllHeader/AddForm/cancel.svg'
 import { setPostsToLocalStorage } from '../../../../utils/helpers'
-import WHITE_BEAR from "../../SideBar/User/white_bear.jpg"
 
 export const EditForm = ({ setShowEditForm, blogPosts, setBlogPosts, selectedPost}) => {
 
@@ -44,10 +43,6 @@ export const EditForm = ({ setShowEditForm, blogPosts, setBlogPosts, selectedPos
         setBlogPosts(updatedPosts);
         setPostsToLocalStorage(updatedPosts);
         setShowEditForm(false);
-    }
-
-    const editPost = (e) => {
-        e.preventDefault();
     }
 
     return (

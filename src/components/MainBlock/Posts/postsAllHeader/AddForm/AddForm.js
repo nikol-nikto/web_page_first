@@ -33,10 +33,6 @@ export const AddForm = ({ setShowAddForm, blogPosts, setBlogPosts }) => {
         setShowAddForm(false);
     }
 
-    const editPost = () => {
-        
-    }
-
     return (
         <>
         <div onClick={() => setShowAddForm(false)} className="overlay"></div>

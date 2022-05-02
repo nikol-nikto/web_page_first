@@ -43,10 +43,6 @@ export const PostsAll = () => {
         setShowEditForm(true);
     };
 
-    const editPost = (pos) => {
-
-    }
-
     return(
     <div className='body'>
         <div className='allPosts'>
