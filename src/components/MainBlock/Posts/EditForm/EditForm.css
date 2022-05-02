@@ -1,0 +1,76 @@
+/* iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+} */
+.addForm {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25%;
+    height: 51%;
+    background-color: #0c0d16;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 25px #00000060;
+}
+.addPostFormCancelBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+.addPostFormCancelBtn svg {
+    height: 25px;
+    width: 25px;
+    fill: #5a5d5f;
+}
+h2 {
+    margin-top: 25px;
+    color: rgb(192, 196, 201);
+    font-size: 150%;
+}
+.addFormInput {
+    border: none;
+    outline: none;
+    background-color: #5a5d5f;
+    margin: 2%;
+    color: aliceblue;
+    border-radius: 10px;
+    width: 70%;
+    padding: 3px 10px;
+    scroll-behavior: smooth;
+}
+/* .addFormInput.title {
+    height: 67%;
+}
+.addFormInput.desc {
+    height: 90%;
+} */
+.addPostBtn {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: rgb(192, 196, 201);
+    /* width: 50%; */
+    margin: 2%;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90%;
+    text-align: center;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.288);
+}

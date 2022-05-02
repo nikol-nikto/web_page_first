@@ -1,4 +1,27 @@
-.like {
+.postActions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.postActions .end {
+    margin: 0 5px;
+}
+.editNDelete {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    height: 20px;
+    margin: 5px 5px 0 0;
+}
+.deleteBtn, .editBtn {
+    background-color: inherit;
+}
+.actionIcon {
     width: 20px;
 }
 .likebtn {
@@ -39,16 +62,19 @@
 }
 
 .postBlock {
-    width: 300px;
+    /* width: 300px; */
+    width: 29%;
     height: 350px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: nowrap;
-    margin: 20px;
+    /* margin: 20px; */
+    margin: 2%;
     background-color: #32383d;
     padding: 8px;
     border-radius: 5px;
+    justify-content: space-between;
 }
 .postBlockImageImg {
     width: 100%;

@@ -6,7 +6,11 @@ import exit from "./exit.svg"
 
 export const LogOut = ({ setIsLoggedIn }) => {
 
-    const logOut = () => setIsLoggedIn(false);
+    const logOut = () => {
+        localStorage.removeItem('isLoggedIn')
+        localStorage.removeItem('blogPosts')
+        setIsLoggedIn(false)
+    };
 
     return (
         <button className="navExit" onClick={logOut}>

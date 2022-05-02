@@ -1,22 +1,82 @@
-import React from 'react'
-import { POST } from './POST';
-import { IMAGE_1 } from './images';
+import React, { useState } from 'react'
+import { POST } from './Post/POST';
+// import { IMAGE_1 } from './images';
 import "./postsAll.css"
+import { postsARRAY } from "../../../utils/constants"
+import { PostsAllHeader } from './postsAllHeader/postsAllHeader';
+import { setPostsToLocalStorage } from '../../../utils/helpers';
+import { EditForm } from './EditForm/EditForm';
 
 export const PostsAll = () => {
+
+    const [blogPosts, setBlogPosts] = useState(
+        JSON.parse(localStorage.getItem('blogPosts')) || postsARRAY
+    );
+
+    const likePost = (pos) => {
+        const updatedPosts = [...blogPosts];
+
+        updatedPosts[pos].liked = !updatedPosts[pos].liked;
+
+        setPostsToLocalStorage(updatedPosts)
+        setBlogPosts(updatedPosts);
+    }
+
+    const deletePost = (postId) => {
+        const isDelete = window.confirm('Вы уверены, что хотите удалить пост?');
+        if (isDelete) {
+            const updatedPosts = blogPosts.filter((post) => {
+                return post.id !== postId
+            })
+
+            setPostsToLocalStorage(updatedPosts)
+            setBlogPosts(updatedPosts);
+
+        }
+    }
+
+    const [selectedPost, setSelectedPost] = useState();
+    const [showEditForm, setShowEditForm] = useState(false);
+
+    const selectPost = (pos) => {
+        setSelectedPost(blogPosts[pos]);
+        setShowEditForm(true);
+    };
+
+    const editPost = (pos) => {
+
+    }
+
     return(
     <div className='body'>
         <div className='allPosts'>
-            <div className="headPost">Posts</div>
-            <POST title="Tittle 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, eum."/>
-            <POST image={IMAGE_1} title="Tittle 2" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores soluta corporis minus nisi aperiam rerum tenetur nemo, quaerat alias quo officiis minima cumque? Nihil quaerat dolore voluptas sint, voluptatum quos esse tempora maiores culpa, voluptatibus tenetur aut, architecto expedita nesciunt!"/>
-            <POST image={IMAGE_1} title="Tittle 3" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est natus reiciendis magni quaerat iste perferendis blanditiis ad repellendus cumque neque?" liked/> 
-            <POST image={IMAGE_1} title="Tittle 2" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores soluta corporis minus nisi aperiam rerum tenetur nemo, quaerat alias quo officiis minima cumque? Nihil quaerat dolore voluptas sint, voluptatum quos esse tempora maiores culpa, voluptatibus tenetur aut, architecto expedita nesciunt!"/>           
-            <POST title="Tittle 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, eum."/>
-            <POST image={IMAGE_1} title="Tittle 3" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est natus reiciendis magni quaerat iste perferendis blanditiis ad repellendus cumque neque?" liked/>
-            <POST image={IMAGE_1} title="Tittle 2" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores soluta corporis minus nisi aperiam rerum tenetur nemo, quaerat alias quo officiis minima cumque? Nihil quaerat dolore voluptas sint, voluptatum quos esse tempora maiores culpa, voluptatibus tenetur aut, architecto expedita nesciunt!"/>          
+            <PostsAllHeader  setBlogPosts={setBlogPosts} blogPosts={blogPosts} />
+            {
+                blogPosts.map((post, pos) => {
+                    return (
+                        <POST
+                            image={post.image}
+                            title={post.title}
+                            description={post.description}
+                            liked={post.liked}
+                            likePost={() => likePost(pos)}
+                            editPost={() => editPost(post.id)}
+                            deletePost={() => deletePost(post.id)}
+                            selectPost={() => selectPost(pos)}
+                            key={post.id}
+                        /> 
+                    )
+                })
+            }
         </div>
-
+        { showEditForm && (
+            <EditForm
+                selectedPost={selectedPost}
+                setShowEditForm={setShowEditForm}
+                setBlogPosts={setBlogPosts}
+                blogPosts={blogPosts}
+            />
+        )};
     </div>
     )
 }
